@@ -2,3 +2,45 @@
 | Basic page layout. Define the dimensions of the top-level boxes and their
 | relative positions on the page.
 */
+header, #main
+{
+  margin: $body-text-line-height-fallback auto;
+  margin: $body-text-line-height auto;
+  padding: $body-text-line-height-fallback $column-width-fallback;
+  padding: $body-text-line-height $column-width;
+  width: $page-width-fallback;
+  width: $page-width;
+  background-color: $content-bg;
+}
+
+$main-border-radius: 15px;
+
+header
+{
+  margin-bottom: 0;
+  @include border-top-left-radius($main-border-radius);
+  @include border-top-right-radius($main-border-radius);
+}
+
+#main
+{
+  margin-top: 0;
+  @include border-bottom-left-radius($main-border-radius);
+  @include border-bottom-right-radius($main-border-radius);
+  padding-top: 0;
+}
+
+nav ul
+{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+nav li
+{
+  float: left;
+  margin-right: $column-width-fallback;
+  margin-right: $column-width;
+  font-size: $secondary-text-size;
+}

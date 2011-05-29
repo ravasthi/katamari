@@ -134,6 +134,62 @@ input, select {
 | Basic page layout. Define the dimensions of the top-level boxes and their
 | relative positions on the page.
 */
+header, #main {
+  margin: 22px auto;
+  margin: 2.2rem auto;
+  padding: 22px 18px;
+  padding: 2.2rem 1.8rem;
+  width: 750px;
+  width: 75rem;
+  background-color: white;
+}
+
+header {
+  margin-bottom: 0;
+  -moz-border-radius-topleft: 15px;
+  -webkit-border-top-left-radius: 15px;
+  -o-border-top-left-radius: 15px;
+  -ms-border-top-left-radius: 15px;
+  -khtml-border-top-left-radius: 15px;
+  border-top-left-radius: 15px;
+  -moz-border-radius-topright: 15px;
+  -webkit-border-top-right-radius: 15px;
+  -o-border-top-right-radius: 15px;
+  -ms-border-top-right-radius: 15px;
+  -khtml-border-top-right-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+#main {
+  margin-top: 0;
+  -moz-border-radius-bottomleft: 15px;
+  -webkit-border-bottom-left-radius: 15px;
+  -o-border-bottom-left-radius: 15px;
+  -ms-border-bottom-left-radius: 15px;
+  -khtml-border-bottom-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  -moz-border-radius-bottomright: 15px;
+  -webkit-border-bottom-right-radius: 15px;
+  -o-border-bottom-right-radius: 15px;
+  -ms-border-bottom-right-radius: 15px;
+  -khtml-border-bottom-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding-top: 0;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+nav li {
+  float: left;
+  margin-right: 18px;
+  margin-right: 1.8rem;
+  font-size: 1.4rem;
+}
+
 /*-----[ common ]---------------------------------------------------------------
 | Reusable content styles. Define your application-wide styles, like links,
 | headers, body text, clearfix, etc. here
@@ -160,7 +216,7 @@ blockquote, dl, ol, p, pre, table, ul {
 }
 
 body {
-  background-color: white;
+  background-color: #eeeeee;
   color: black;
   font-family: Calibri, "Myriad Pro", Tahoma, sans-serif;
   font-size: 16px;
