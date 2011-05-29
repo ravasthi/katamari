@@ -4,29 +4,13 @@
 */
 header, #main
 {
-  margin: $body-text-line-height-fallback auto;
-  margin: $body-text-line-height auto;
   padding: $body-text-line-height-fallback $column-width-fallback;
   padding: $body-text-line-height $column-width;
-  width: $page-width-fallback;
-  width: $page-width;
   background-color: $content-bg;
-}
-
-$main-border-radius: 15px;
-
-header
-{
-  margin-bottom: 0;
-  @include border-top-left-radius($main-border-radius);
-  @include border-top-right-radius($main-border-radius);
 }
 
 #main
 {
-  margin-top: 0;
-  @include border-bottom-left-radius($main-border-radius);
-  @include border-bottom-right-radius($main-border-radius);
   padding-top: 0;
 }
 

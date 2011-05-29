@@ -1,0 +1,27 @@
+/*------------------------------------------------------------------------------
+| 992.css
+| Sinatra Bootstrap + 55 Minutes Scaffolding + 320 and Up
+| Author(s): Richa Avasthi
+| Created: 2011-05-29
+|
+| Styles for screen sizes at least 992px wide.
+------------------------------------------------------------------------------*/
+
+@import "compass/css3";
+@import "colors";
+@import "typography";
+@import "dimensions";
+
+/*-----[ 992px+ screen width ]--------------------------------------------------
+*/
+$page-width-fallback: 750px;
+$page-width: 75rem;
+
+header, #main
+{
+  margin-left: auto;
+  margin-right: auto;
+  width: $page-width-fallback;
+  width: $page-width;
+}
+

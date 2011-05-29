@@ -1,0 +1,24 @@
+/*------------------------------------------------------------------------------
+| 480.css
+| Sinatra Bootstrap + 55 Minutes Scaffolding + 320 and Up
+| Author(s): Richa Avasthi
+| Created: 2011-05-29
+|
+| Styles for screen sizes at least 480px wide.
+------------------------------------------------------------------------------*/
+
+@import "compass/css3";
+@import "colors";
+@import "typography";
+@import "dimensions";
+
+/*-----[ 480px+ screen width ]--------------------------------------------------
+*/
+header, #main
+{
+  padding-left: $gutter-width-fallback;
+  padding-left: $gutter-width;
+  padding-right: $gutter-width-fallback;
+  padding-right: $gutter-width;
+}
+

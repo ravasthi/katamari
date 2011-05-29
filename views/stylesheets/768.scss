@@ -1,0 +1,43 @@
+/*------------------------------------------------------------------------------
+| 768.css
+| Sinatra Bootstrap + 55 Minutes Scaffolding + 320 and Up
+| Author(s): Richa Avasthi
+| Created: 2011-05-29
+|
+| Styles for screen sizes at least 768px wide.
+------------------------------------------------------------------------------*/
+
+@import "compass/css3";
+@import "colors";
+@import "typography";
+@import "dimensions";
+
+/*-----[ 768px+ screen width ]--------------------------------------------------
+*/
+$main-border-radius: 15px;
+
+body
+{
+  background-color: $page-bg;
+}
+
+header, #main
+{
+  margin: $body-text-line-height-fallback $gutter-width-fallback;
+  margin: $body-text-line-height $gutter-width;
+}
+
+header
+{
+  margin-bottom: 0;
+  @include border-top-left-radius($main-border-radius);
+  @include border-top-right-radius($main-border-radius);
+}
+
+#main
+{
+  margin-top: 0;
+  @include border-bottom-left-radius($main-border-radius);
+  @include border-bottom-right-radius($main-border-radius);
+}
+
