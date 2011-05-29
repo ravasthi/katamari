@@ -3,10 +3,24 @@
   %head
     %meta{:'http-equiv' => "Content-Type", :content => "text/html; charset=utf-8"}
     %meta{:name => "lang", :content => "en"}
-    %title Sinatra Bootstrap
-    %link{:href=>'/stylesheets/application.css', :media => "screen", :rel => 'stylesheet', :type => "text/css"}
-    %script{:type => "text/javascript", :src => "http://code.jquery.com/jquery-1.5.min.js"}
-    %script{:type => "text/javascript", :src => "/javascripts/lib/modernizr-1.6.min.js"}
+
+    %title Sinatra Bootstrap + 55 Minutes Scaffolding
+
+    %link{:href=>'/stylesheets/screen.css', :media => "screen", :rel => 'stylesheet', :type => "text/css"}
+    %link{:href=>'/stylesheets/print.css', :media => "print", :rel => 'stylesheet', :type => "text/css"}
+
+    /[if IE]
+      %link{:href=>'/stylesheets/ie.css', :media => "screen", :rel => 'stylesheet', :type => "text/css"}
+
+    / JavaScript libraries
+    %script{:type => "text/javascript", :src => "/javascripts/lib/modernizr-1.7/modernizr.min.js"}
+    %script{:type => "text/javascript", :src => "/javascripts/lib/fiftyfive-utils/modernizr-extras.js"}
+    %script{:type => "text/javascript", :src => "/javascripts/lib/jquery-1.6.1/jquery.min.js"}
+    %script{:type => "text/javascript", :src => "/javascripts/lib/jquery-ui-1.8.13/jquery-ui.min.js"}
+    %script{:type => "text/javascript", :src => "/javascripts/lib/fiftyfive-utils/55_utils.js"}
+    %script{:type => "text/javascript", :src => "/javascripts/lib/fiftyfive-utils/jquery.55_utils.js"}
+
+    / Application-specific JS
     %script{:type => "text/javascript", :src => "/javascripts/application.js"}
     
   %body

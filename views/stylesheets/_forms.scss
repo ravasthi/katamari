@@ -1,0 +1,130 @@
+/*-----[ forms ]----------------------------------------------------------------
+*/
+/*-----[ text and password fields, textareas ]----------------------------------
+*/
+input[type=email],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=url],
+select,
+textarea
+{
+  margin: 0;
+  border: 1px solid $text-input-outside-stroke;
+  padding: ($body-text-line-height-fallback - $secondary-text-size-fallback - 2) / 2;
+  padding: ($body-text-line-height - $secondary-text-size - 0.2) / 2;
+  background-color: white;
+  font-family:  $body-text;
+  font-size: $secondary-text-size-fallback;
+  font-size: $secondary-text-size;
+  line-height: $secondary-text-size-fallback;
+  line-height: $secondary-text-size;
+}
+
+input[type=email][disabled],
+input[type=password][disabled],
+input[type=search][disabled],
+input[type=tel][disabled],
+input[type=text][disabled],
+input[type=url][disabled],
+select[disabled],
+textarea[disabled]
+{
+  border-color: #c0c0c0 !important;
+  background-color: #e0e0e0 !important;
+  color: #808080 !important;
+  cursor: default !important;
+}
+
+input[type=text].small
+{
+  width: 50px;
+  margin-right: 0.33em;
+}
+
+/*-----[ buttons and checkboxes]------------------------------------------------
+*/
+$button-border-radius: 8px;
+
+input[type=checkbox],
+input[type=radio]
+{
+  vertical-align: baseline;
+}
+
+input[type=checkbox]
+{
+  border: 1px solid #505050;
+  background-color: white;
+}
+
+input[type=submit],
+input[type=button],
+button
+{
+  border: 2px solid $button-border;
+  @include border-radius($button-border-radius);
+  padding: 2px $column-width-fallback;
+  padding: 2px $column-width;
+  background: $button-gradient-mid;
+  @include background-image(linear-gradient($button-gradient-light, $button-gradient-dark));
+  color: $button-text-color;
+  font-size: $secondary-text-size-fallback;
+  font-size: $secondary-text-size;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+input[type=submit][disabled],
+input[type=button][disabled],
+button[disabled]
+{
+  border: 2px solid $disabled-button-border;
+  background: $disabled-button-gradient-mid;
+  @include background-image(linear-gradient($disabled-button-gradient-light, $disabled-button-gradient-dark));
+  color: $disabled-button-text-color;
+  cursor: default !important;
+}
+
+.button-bar
+{
+  margin: $body-text-line-height-fallback 0;
+  margin: $body-text-line-height 0;
+  padding: 0px;
+}
+
+.button-bar > a
+{
+  display: inline-block;
+  vertical-align: middle;
+  font-size: $secondary-text-size-fallback;
+  font-size: $secondary-text-size;
+  line-height: $body-text-line-height-fallback;
+  line-height: $body-text-line-height;
+}
+
+.button-bar input[type=submit],
+.button-bar input[type=button],
+.button-bar button,
+.button-bar > a
+{
+  float: left;
+  margin: 0;
+  margin-right: $column-width-fallback / 2;
+  margin-right: $column-width / 2;
+}
+
+/*----------[ datepicker ]------------------------------------------------------
+*/
+input.date,
+img.ui-datepicker-trigger
+{
+  vertical-align: middle;
+}
+
+.ui-datepicker
+{
+  font-size: $secondary-text-size !important;
+}

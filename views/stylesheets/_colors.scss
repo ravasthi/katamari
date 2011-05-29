@@ -1,0 +1,56 @@
+/*-----[ colors ]---------------------------------------------------------------
+| Variables defining the colors to be used throughout the application. Curious
+| about the color names? Check out <www.colblindor.com/color-name-hue/> and 
+| <http://chir.ag/projects/name-that-color/>.
+*/
+/*----------[ palette ]---------------------------------------------------------
+*/
+$old-copper: #6f452b;
+$tuscany: #c8653a;
+$hurricane: #94847c;
+$bone: #e5dbc7;
+$pattens-blue: #dde7f3;
+$rain-forest: #696f2b;
+$lochinvar: #46948d;
+$jacarta: #4b2b6f;
+$fire: #8a3528;
+$azure: #37649b;
+$wedgewood: #467894;
+
+/*----------[ backgrounds and borders ]-----------------------------------------
+*/
+$page-bg: white;
+$accent-bg: $bone;
+
+$inverse-highlight: $old-copper;
+
+/*----------[ text ]------------------------------------------------------------
+*/
+$body-text-color: black;
+$link: $wedgewood;
+$visited-link: $jacarta;
+$secondary-text-color: #808080;
+
+$highlighted-text-color: white;
+$subheading-text-color: $tuscany;
+
+$error-feedback: $fire;
+$success-feedback: $azure;
+
+/*----------[ forms ]-----------------------------------------------------------
+*/
+$button-border: black;
+$button-gradient-light: #67b7b0;
+$button-gradient-mid: $lochinvar;
+$button-gradient-dark: #306661;
+$button-text-color: white;
+
+$disabled-button-border: #d0d0d0;
+$disabled-button-gradient-light: #fefefe;
+$disabled-button-gradient-mid: #ececec;
+$disabled-button-gradient-dark: #cdcdcd;
+$disabled-button-text-color: #959595;
+
+$text-input-inside-stroke: #f0eade;
+$text-input-outside-stroke: black;
+
