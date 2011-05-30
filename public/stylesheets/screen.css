@@ -168,13 +168,13 @@ html {
 }
 
 a {
-  color: #467894;
+  color: #5a663a;
 }
 
 a:hover,
 a:active,
 a:link:visited {
-  color: #4b2b6f;
+  color: #331a2a;
 }
 
 blockquote, dl, ol, p, pre, table, ul {
@@ -217,7 +217,7 @@ h1 {
 
 h2 {
   margin-top: 0;
-  color: #c8653a;
+  color: #4c1329;
 }
 
 hr {
@@ -393,12 +393,12 @@ button {
   border-radius: 8px;
   padding: 2px 18px;
   padding: 2px 1.8rem;
-  background: #46948d;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #67b7b0), color-stop(100%, #306661));
-  background-image: -webkit-linear-gradient(#67b7b0, #306661);
-  background-image: -moz-linear-gradient(#67b7b0, #306661);
-  background-image: -o-linear-gradient(#67b7b0, #306661);
-  background-image: linear-gradient(#67b7b0, #306661);
+  background: #822146;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b92e64), color-stop(100%, #4c1329));
+  background-image: -webkit-linear-gradient(#b92e64, #4c1329);
+  background-image: -moz-linear-gradient(#b92e64, #4c1329);
+  background-image: -o-linear-gradient(#b92e64, #4c1329);
+  background-image: linear-gradient(#b92e64, #4c1329);
   color: white;
   font-size: 14px;
   font-size: 1.4rem;

@@ -15,6 +15,21 @@
         {
             $("html").addClass("ff");
         }
+
+        // http://adactio.com/journal/4470/
+        if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i))
+        {
+            var viewportmeta = $('meta[name="viewport"]');
+            if (viewportmeta.length > 0)
+            {
+                viewportmeta.attr("content",
+                    "width=device-width, minimum-scale=1.0, maximum-scale=1.0");
+                $("body").bind("gesturestart", function() {
+                    viewportmeta.attr("content",
+                        "width=device-width, minimum-scale=0.25, maximum-scale=1.6");
+                });
+            }
+        }
     });
 })(jQuery);
 
