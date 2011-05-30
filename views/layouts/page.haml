@@ -36,21 +36,21 @@
     
     / Favicons and touch icons
     / For iPhone 4
-    %link{:href => 'images/apple-touch-icon-large.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114'}
+    %link{:href => '/images/apple-touch-icon-large.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114'}
     / For iPad 1
-    %link{:href => 'images/apple-touch-icon-medium.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72'}
+    %link{:href => '/images/apple-touch-icon-medium.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72'}
     / For iPhone 3G, iPod Touch and Android
-    %link{:href => 'images/apple-touch-icon-small.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png'}
+    %link{:href => '/images/apple-touch-icon-small.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png'}
     / For Nokia
-    %link{:href => 'images/apple-touch-icon-small.png'}
+    %link{:href => '/images/apple-touch-icon-small.png'}
     / For everything else
-    %link{:href => 'images/favicon.png', :type => 'image/png'}
-    %link{:href => 'images/favicon.ico'}
+    %link{:href => 'favicon.png', :type => 'image/png'}
+    %link{:href => 'favicon.ico'}
 
     / iOS meta
     %meta{:name => 'apple-mobile-web-app-capable',  :content => 'yes'}
     %meta{:name => 'apple-mobile-web-app-status-bar-style',  :content => 'black-translucent'}
-    %link{:href => 'images/splash-iphone.png', :rel => 'apple-touch-startup-image', :type => 'image/png'}
+    %link{:href => '/images/splash-iphone.png', :rel => 'apple-touch-startup-image', :type => 'image/png'}
 
     / Microsoft meta
     %meta{'http-equiv' => 'cleartype',  :content => 'on'}
@@ -58,9 +58,10 @@
 
 
   %body
-    = partial :_nav_main
-    %section#main
-      = yield
+    #page
+      = partial :_nav_main
+      %section#main
+        = yield
     
     / JavaScript libraries
     %script{:type => "text/javascript", :src => "/javascripts/lib/jquery-1.6.1/jquery.min.js"}

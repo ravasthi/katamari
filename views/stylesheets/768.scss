@@ -18,26 +18,14 @@ $main-border-radius: 15px;
 
 body
 {
-  background-color: $page-bg;
+  background: $page-bg url("../images/bg.png");
 }
 
-header, #main
+#page
 {
   margin: $body-text-line-height-fallback $gutter-width-fallback;
   margin: $body-text-line-height $gutter-width;
-}
-
-header
-{
-  margin-bottom: 0;
-  @include border-top-left-radius($main-border-radius);
-  @include border-top-right-radius($main-border-radius);
-}
-
-#main
-{
-  margin-top: 0;
-  @include border-bottom-left-radius($main-border-radius);
-  @include border-bottom-right-radius($main-border-radius);
+  @include border-radius($main-border-radius);
+  @include single-box-shadow($content-shadow, 2px, 2px, 8px)
 }
 

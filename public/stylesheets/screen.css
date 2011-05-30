@@ -134,10 +134,13 @@ input, select {
 | Basic page layout. Define the dimensions of the top-level boxes and their
 | relative positions on the page.
 */
+#page {
+  background-color: white;
+}
+
 header, #main {
   padding: 22px 18px;
   padding: 2.2rem 1.8rem;
-  background-color: white;
 }
 
 #main {

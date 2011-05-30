@@ -17,11 +17,16 @@
 $page-width-fallback: 750px;
 $page-width: 75rem;
 
-header, #main
+#page
 {
   margin-left: auto;
   margin-right: auto;
   width: $page-width-fallback;
   width: $page-width;
+}
+
+header, #main
+{
+  margin: 0;
 }
 

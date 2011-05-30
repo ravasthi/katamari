@@ -2,11 +2,15 @@
 | Basic page layout. Define the dimensions of the top-level boxes and their
 | relative positions on the page.
 */
+#page
+{
+  background-color: $content-bg;
+}
+
 header, #main
 {
   padding: $body-text-line-height-fallback $column-width-fallback;
   padding: $body-text-line-height $column-width;
-  background-color: $content-bg;
 }
 
 #main

@@ -25,9 +25,13 @@
 */
 /*-----[ 992px+ screen width ]--------------------------------------------------
 */
-header, #main {
+#page {
   margin-left: auto;
   margin-right: auto;
   width: 750px;
   width: 75rem;
+}
+
+header, #main {
+  margin: 0;
 }

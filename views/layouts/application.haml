@@ -58,9 +58,10 @@
 
 
   %body
-    = partial :_nav_main
-    %section#main
-      = yield
+    #page
+      = partial :_nav_main
+      %section#main
+        = yield
     
     / JavaScript libraries
     %script{:type => "text/javascript", :src => "/javascripts/lib/jquery-1.6.1/jquery.min.js"}

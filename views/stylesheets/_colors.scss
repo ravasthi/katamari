@@ -5,6 +5,8 @@
 */
 /*----------[ palette ]---------------------------------------------------------
 */
+$porcelain: #e6e2e1;
+$silver-rust: #cec8c5;
 $americano: #7f716b;
 $verdigris: #5a663a;
 $castro: #331a2a;
@@ -13,9 +15,11 @@ $disco: #8c1c47;
 
 /*----------[ backgrounds and borders ]-----------------------------------------
 */
-$page-bg: #eee;
+$page-bg: $porcelain;
 $content-bg: white;
-$accent-bg: #ccc;
+$accent-bg: $silver-rust;
+
+$content-shadow: $americano;
 
 $inverse-highlight: $castro;
 
