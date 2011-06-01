@@ -1,5 +1,5 @@
 # Katamari
-## Rolling up a mass of web-quickstart goodness.
+## A big ball of web-quickstart goodness.
 
 This is a quickstart for Sinatra applications, based on [sinatra-bootstrap](https://github.com/adamstac/sinatra-bootstrap), and integrated with/optimized for the following:
 
