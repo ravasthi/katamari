@@ -5,25 +5,31 @@ gemset_name="katamari"
 
 if rvm list strings | grep -q "${ruby_string}" ; then
 
-    # Load or create the specified environment
-    if [[ -d "${rvm_path:-$HOME/.rvm}/environments" \
-        && -s "${rvm_path:-$HOME/.rvm}/environments/${ruby_string}@${gemset_name}" ]] ; then
-    \. "${rvm_path:-$HOME/.rvm}/environments/${ruby_string}@${gemset_name}"
+  # Load or create the specified environment
+  if [[ -d "${rvm_path:-$HOME/.rvm}/environments" \
+    && -s "${rvm_path:-$HOME/.rvm}/environments/${ruby_string}@${gemset_name}" ]] ; then
+  \. "${rvm_path:-$HOME/.rvm}/environments/${ruby_string}@${gemset_name}"
 else
-    rvm --create  "${ruby_string}@${gemset_name}"
+  rvm --create  "${ruby_string}@${gemset_name}"
 fi
 
 # Ensure that Bundler is installed, install it if it is not.
 if ! command -v bundle ; then
-    gem install bundler
+  printf "The rubygem 'bundler' is not installed. Installing it now.\n"
+  gem install bundler
 fi
 
 # Bundle while reducing excess noise.
-bundle | grep -v 'Using' | grep -v 'complete' | sed '/^$/d'
+printf "Bundling your gems. This may take a few minutes on a fresh clone.\n"
+bundle --binstubs | grep -v 'Using' | grep -v 'complete' | sed '/^$/d'
 
 else
 
-    # Notify the user to install the desired interpreter before proceeding.
-    echo "${ruby_string} was not found. Please run 'rvm install ${ruby_string}' and then cd back into the project directory."
+  # Notify the user to install the desired interpreter before proceeding.
+  echo "${ruby_string} was not found. Please run 'rvm install ${ruby_string}' and then cd back into the project directory."
 
 fi
+
+# We always want to use the stubs provided by bundler!
+# This means can safely run `rake` instead of `bundle exec rake`.
+export PATH="./bin:$PATH"
