@@ -2,32 +2,36 @@ load 'app.rb'
 require './app'
 
 # Compass Configuration
+require 'compass-colors'
+require 'sassy-buttons'
 
 # Configuration to use when running within Sinatra
-project_path          = Sinatra::Application.root
+project_path            = Sinatra::Application.root
 
 # HTTP paths
-http_path             = '/'
-http_stylesheets_path = '/stylesheets'
-http_images_path      = '/images'
-http_javascripts_path = '/javascripts'
+http_path               = '/'
+http_stylesheets_path   = '/stylesheets'
+http_images_path        = '/images'
+http_javascripts_path   = '/javascripts'
 
 # File system locations
-css_dir               = File.join 'public', 'stylesheets'
-sass_dir              = File.join 'views', 'stylesheets'
-images_dir            = File.join 'public', 'images'
-javascripts_dir       = File.join 'public', 'javascripts'
+css_dir                 = File.join 'public', 'stylesheets'
+sass_dir                = File.join 'views', 'stylesheets'
+additional_import_paths = [File.join('views', 'stylesheets', 'basics'), 
+                           File.join('views', 'stylesheets', 'shared')]
+images_dir              = File.join 'public', 'images'
+javascripts_dir         = File.join 'public', 'javascripts'
 
 # Syntax preference
-preferred_syntax      = :scss
+preferred_syntax        = :scss
 
 # Determine whether Compass generates relative or absolute paths
-relative_assets       = false
+relative_assets         = false
 
 # Determines whether line comments should be added to compiled css for easier debugging
-line_comments         = false
+line_comments           = false
 
 # CSS output style - :nested, :expanded, :compact, or :compressed
-output_style          = :expanded
+output_style            = :expanded
 
 # Learn more: http://beta.compass-style.org/help/tutorials/configuration-reference/

@@ -4,21 +4,17 @@
 | Author(s): Richa Avasthi
 | Created: 2011-05-29
 |
-| Styles for screen sizes at least 480px wide.
+| Styles for displays 480px wide and up. Note that only major layout changes,
+| like showing or hiding a sidebar, should be in these size-specific
+| stylesheets. Other, smaller changes may be added into feature-specific styles
+| using media queries. See _home.scss for an example.
 ------------------------------------------------------------------------------*/
 
 @import "compass/css3";
+// Include variables if needed.
 @import "colors";
 @import "typography";
-@import "dimensions";
+@import "grid";
 
 /*-----[ 480px+ screen width ]--------------------------------------------------
 */
-header, #main
-{
-  padding-left: $gutter-width-fallback;
-  padding-left: $gutter-width;
-  padding-right: $gutter-width-fallback;
-  padding-right: $gutter-width;
-}
-

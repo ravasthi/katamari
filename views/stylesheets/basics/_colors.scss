@@ -1,0 +1,78 @@
+/*-----[ colors ]---------------------------------------------------------------
+| Variables defining the colors to be used throughout the application. Curious
+| about the color names? Check out <www.colblindor.com/color-name-hue/> and 
+| <http://chir.ag/projects/name-that-color/>.
+*/
+
+/*----------[ table of contents ]-----------------------------------------------
+| palette
+| backgrounds and borders
+| text
+| forms
+*/
+
+
+/*----------[ palette ]---------------------------------------------------------
+*/
+// Main palette
+$serenade    : #fff8ec;
+$porcelain   : #e6e2e1;
+$silver-rust : #cec8c5;
+$americano   : #7f716b;
+$verdigris   : #5a663a;
+$castro      : #331a2a;
+$wine-berry  : #4c1329;
+$disco       : #8c1c47;
+$desert      : #aa5e20;
+$old-gold    : #ccb83d;
+
+// Greys
+$charcoal    : #444444;
+$grey        : #808080;
+$silver      : #c0c0c0;
+$white-smoke : #f0f0f0;
+
+/*----------[ backgrounds and borders ]-----------------------------------------
+*/
+$page-bg           : $porcelain;
+$content-bg        : white;
+$accent-bg         : $silver-rust;
+
+$content-shadow    : $americano;
+
+$inverse-highlight : $castro;
+
+$stroke            : black;
+$light-stroke      : darken($white-smoke, 10);
+$disabled-stroke   : $silver;
+
+/*----------[ text ]------------------------------------------------------------
+*/
+$body-text         : black;
+$secondary-text    : $grey;
+$disabled-text     : $silver;
+
+$link              : $verdigris;
+$visited-link      : $castro;
+$active-link       : $disco;
+
+$highlighted-text  : white;
+$page-heading-text : $disco;
+$subheading-text   : $wine-berry;
+
+$error-feedback    : $desert;
+$warning-feedback  : darken($old-gold, 5);
+$success-feedback  : $verdigris;
+
+/*----------[ forms ]-----------------------------------------------------------
+*/
+$button-base-bg             : $wine-berry;
+$button-text                : white;
+
+$destructive-button-base-bg : $desert;
+$destructive-button-text    : white;
+
+$disabled-button-base-bg    : lighten($silver, 3);
+$disabled-button-text       : lighten($grey, 5);
+
+

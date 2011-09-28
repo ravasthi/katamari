@@ -10,8 +10,8 @@
         ** JavaScript solution. Key off the classes assigned by this function
         ** to write your IE-specific styles in ie.css, included above.
         */
-        $("html").addClass(getIEClass());
-        if(isFirefox())
+        $("html").addClass(fiftyfive.util.getIEClass());
+        if(navigator.userAgent.match(/Firefox/i))
         {
             $("html").addClass("ff");
         }
