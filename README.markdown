@@ -9,4 +9,4 @@ This is a quickstart for Sinatra applications, based on [sinatra-bootstrap](http
 * <a href="http://opensource.55minutes.com/" title="opensource @ 55 Minutes: Java, Python and HTML5 goodies">55 Minutes Compass-based scaffolding</a>
 * <a href="https://github.com/rtomayko/rdiscount/">RDiscount</a>
   
-Licenses of source works apply as appropriate.
+Licenses of source works apply as appropriate. Icons by [famfamfam](http://www.famfamfam.com/lab/icons/silk/).
