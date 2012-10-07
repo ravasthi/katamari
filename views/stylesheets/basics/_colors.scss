@@ -1,6 +1,6 @@
 /*-----[ colors ]---------------------------------------------------------------
 | Variables defining the colors to be used throughout the application. Curious
-| about the color names? Check out <www.colblindor.com/color-name-hue/> and 
+| about the color names? Check out <www.colblindor.com/color-name-hue/> and
 | <http://chir.ag/projects/name-that-color/>.
 */
 
@@ -15,64 +15,62 @@
 /*----------[ palette ]---------------------------------------------------------
 */
 // Main palette
-$serenade    : #fff8ec;
-$porcelain   : #e6e2e1;
-$silver-rust : #cec8c5;
-$americano   : #7f716b;
-$verdigris   : #5a663a;
-$castro      : #331a2a;
-$wine-berry  : #4c1329;
-$disco       : #8c1c47;
-$desert      : #aa5e20;
-$old-gold    : #ccb83d;
+$cream          : #fff8ec;
+$tan-light      : #e6e2e1;
+$tan-medium     : #cec8c5;
+$tan-dark       : #7f716b;
+$green          : #5a663a;
+$rose           : #8c1c47;
+$rose-dark      : #4c1329;
+$purple         : #331a2a;
+$burnt-orange   : #aa5e20;
+$mustard-yellow : #ccb83d;
 
 // Greys
-$charcoal    : #444444;
-$grey        : #808080;
-$silver      : #c0c0c0;
-$white-smoke : #f0f0f0;
+$charcoal       : #444444;
+$grey           : #808080;
+$silver         : #c0c0c0;
+$greyish-white  : #f0f0f0;
 
 /*----------[ backgrounds and borders ]-----------------------------------------
 */
-$page-bg           : $porcelain;
+$page-bg           : $tan-light;
 $content-bg        : white;
-$accent-bg         : $silver-rust;
+$accent-bg         : $tan-medium;
 
-$content-shadow    : $americano;
+$content-shadow    : $tan-dark;
 
-$inverse-highlight : $castro;
+$inverse-highlight : $purple;
 
 $stroke            : black;
-$light-stroke      : darken($white-smoke, 10);
+$light-stroke      : darken($greyish-white, 10);
 $disabled-stroke   : $silver;
 
 /*----------[ text ]------------------------------------------------------------
 */
-$body-text         : black;
-$secondary-text    : $grey;
-$disabled-text     : $silver;
+$body-text-color         : black;
+$secondary-text-color    : $grey;
+$disabled-text-color     : $silver;
 
-$link              : $verdigris;
-$visited-link      : $castro;
-$active-link       : $disco;
+$link                    : $green;
+$visited-link            : $purple;
+$active-link             : $rose;
 
-$highlighted-text  : white;
-$page-heading-text : $disco;
-$subheading-text   : $wine-berry;
+$highlighted-text-color  : white;
+$page-heading-text-color : $rose;
+$subheading-text-color   : $rose-dark;
 
-$error-feedback    : $desert;
-$warning-feedback  : darken($old-gold, 5);
-$success-feedback  : $verdigris;
+$error-feedback          : $burnt-orange;
+$warning-feedback        : darken($mustard-yellow, 5);
+$success-feedback        : $green;
 
 /*----------[ forms ]-----------------------------------------------------------
 */
-$button-base-bg             : $wine-berry;
-$button-text                : white;
+$button-base-bg                : $rose-dark;
+$button-text-color             : white;
 
-$destructive-button-base-bg : $desert;
-$destructive-button-text    : white;
+$destructive-button-base-bg    : $burnt-orange;
+$destructive-button-text-color : white;
 
-$disabled-button-base-bg    : lighten($silver, 3);
-$disabled-button-text       : lighten($grey, 5);
-
-
+$disabled-button-base-bg       : lighten($silver, 3);
+$disabled-button-text-color    : lighten($grey, 5);

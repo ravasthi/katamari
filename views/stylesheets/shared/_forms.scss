@@ -23,12 +23,12 @@ select,
 textarea
 {
   margin: 0;
-  border: 0.1rem solid $stroke;
+  border: 1px solid $stroke;
   padding: ($body-text-line-height - $secondary-text-size - 0.2) / 2;
   background-color: white;
   font-family:  $body-text-family;
   font-size: $secondary-text-size;
-  line-height: $secondary-text-size;
+  line-height: 1;
 }
 
 input[type=email][disabled],
@@ -41,20 +41,18 @@ select[disabled],
 textarea[disabled]
 {
   border-color: $disabled-stroke !important;
-  color: $disabled-text !important;
+  color: $disabled-text-color !important;
   cursor: default !important;
 }
 
 input[type=text].small
 {
-  width: 5rem;
+  width: 50px;
   margin-right: 0.33em;
 }
 
 /*----------[ buttons and checkboxes]-------------------------------------------
 */
-$button-border-radius: 0.6rem;
-
 input[type=checkbox],
 input[type=radio]
 {
@@ -63,7 +61,7 @@ input[type=radio]
 
 input[type=checkbox]
 {
-  border: 0.1rem solid $grey;
+  border: 1px solid $grey;
   background-color: white;
 }
 
@@ -73,7 +71,7 @@ input[type=checkbox]
 **    main buttons: orange,
 **    disabled buttons: grey,
 **    buttons for destructive actions: red
-** 
+**
 ** See
 **    http://jaredhardy.com/sassy-buttons/ and
 **    https://github.com/jhardy/Sassy-Buttons
@@ -81,49 +79,26 @@ input[type=checkbox]
 */
 input[type=submit],
 input[type=button],
-button
+button,
+a.button
 {
-  $sb-base-color: $button-base-bg;
-  $sb-second-color: false;
-  $sb-border-radius: $button-border-radius;
-  $sb-border-width: 0.1rem;
-  $sb-padding: 0.2rem $column-width;
-  $sb-font-size: $secondary-text-size;
-  $sb-line-height: $body-text-line-height - 0.4rem;
-  $sb-text-color: $button-text;
-  $sb-text-style: false;
-  $sb-gradient-style: "matte";
-  $sb-hover: true;
-  
   @include sassy-button();
-  
-  // For some reason, the color I set above gets ignored. Set it manually.
-  color: $button-text;
-  font-family:  $body-text-family;
+
+  font-family:  $button-text-family;
   font-weight: bold;
-//  cursor: pointer;
-  
+
   &.destructive
   {
-    $sb-base-color: $destructive-button-base-bg;
-    $sb-text-color: $destructive-button-text;
-    
-    @include sassy-button();
-
-    // For some reason, the color I set above gets ignored. Set it manually.
-    color: $destructive-button-text;
+    @include sassy-button($first-color : $destructive-button-base-bg,
+                          $text-color  : $destructive-button-text-color);
   }
 
   &[disabled]
   {
-    $sb-base-color: $disabled-button-base-bg;
-    $sb-text-color: $disabled-button-text;
-    $sb-hover: false;
-    
-    @include sassy-button();
+    @include sassy-button($first-color : $disabled-button-base-bg,
+                          $text-color  : $disabled-button-text-color,
+                          $auto-states : false);
 
-    // For some reason, the color I set above gets ignored. Set it manually.
-    color: $disabled-button-text;
     cursor: default !important;
   }
 }
@@ -132,14 +107,6 @@ button
 {
   margin: $body-text-line-height 0;
   padding: 0;
-}
-
-.button-bar > a
-{
-  display: inline-block;
-  vertical-align: middle;
-  font-size: $secondary-text-size;
-  line-height: $body-text-line-height;
 }
 
 .button-bar input[type=submit],
@@ -152,22 +119,32 @@ button
   margin-right: $column-width / 2;
 }
 
+.button-bar > a
+{
+  display: inline-block;
+  vertical-align: middle;
+  font-size: $secondary-text-size;
+  line-height: $secondary-text-line-height + 2 * ($button-vertical-padding + $button-border-width);
+}
+
 /*----------[ form layout ]-----------------------------------------------------
+*/
+/*---------------[ forms in tables ]--------------------------------------------
 */
 table.form
 {
   margin-top: 0;
-  
+
   &, th, td
   {
     border-style: none;
   }
-  
+
   .section-heading th
   {
-    color: $subheading-text;
+    color: $subheading-text-color;
   }
-  
+
   .field-label
   {
     padding-right: $column-width;
@@ -175,7 +152,7 @@ table.form
     text-align: right;
     font-weight: normal;
   }
-  
+
   .field, .button-bar
   {
     padding-left: 0;
@@ -192,19 +169,23 @@ table.form
   }
 }
 
+/*---------------[ stacked forms ]----------------------------------------------
+*/
 .stacked
 {
+  margin-left: -$horizontal-nudge;
+
   .section-heading
   {
     font-weight: bold;
-    color: $subheading-text;
+    color: $subheading-text-color;
   }
 
   .field > label:first-of-type
   {
     margin-top: $body-text-line-height / 2;
   }
-  
+
   .field, .section-heading, .button-bar
   {
     padding-left: $horizontal-nudge;
@@ -219,17 +200,17 @@ table.form
   {
     background-color: lighten($error-feedback, 55);
   }
-  
+
   label, .form-help
   {
     color: $error-feedback;
   }
-  
+
   label
   {
     font-weight: bold;
   }
-  
+
   input[type=email],
   input[type=password],
   input[type=search],
@@ -241,12 +222,12 @@ table.form
   {
     border-color: darken($error-feedback, 5);
   }
-  
+
   ul.error-explanation
   {
-    margin: 0;
+    margin: $vertical-nudge;
     margin-left: $column-width;
-    font-size: $secondary-text-size;
+    @include secondary-text;
     color: $error-feedback;
   }
 }

@@ -2,7 +2,6 @@ load 'app.rb'
 require './app'
 
 # Compass Configuration
-require 'compass-colors'
 require 'sassy-buttons'
 
 # Configuration to use when running within Sinatra
@@ -17,7 +16,7 @@ http_javascripts_path   = '/javascripts'
 # File system locations
 css_dir                 = File.join 'public', 'stylesheets'
 sass_dir                = File.join 'views', 'stylesheets'
-additional_import_paths = [File.join('views', 'stylesheets', 'basics'), 
+additional_import_paths = [File.join('views', 'stylesheets', 'basics'),
                            File.join('views', 'stylesheets', 'shared')]
 images_dir              = File.join 'public', 'images'
 javascripts_dir         = File.join 'public', 'javascripts'

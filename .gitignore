@@ -6,8 +6,8 @@
 
 # Compass
 .sass-cache/
-images/icon-*.png
-styles-compiled/
+public/images/icon-*.png
+public/stylesheets/
 
 # Pow/RVM
 .powenv

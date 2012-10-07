@@ -1,0 +1,21 @@
+# Vendorfile for use with vendorer command. https://github.com/grosser/vendorer
+# Run `vendorer` to install jQuery and jQuery UI dependencies into scripts/lib.
+
+JQUERY_VER = "1.8.2"
+JQUERY_UI_VER = "1.8.24"
+
+folder "public/javascripts/lib" do
+
+  # 55 Minutes JavaScript utils (master)
+  #
+  folder "fiftyfive-utils", "git://github.com/55minutes/fiftyfive-util-js.git"
+
+  # Standard jQuery/UI dist
+  #
+  file "jquery.js",         "http://code.jquery.com/jquery-#{JQUERY_VER}.js"
+  file "jquery-ui.js",      "http://jquery-ui.googlecode.com/svn/tags/#{JQUERY_UI_VER}/ui/jquery-ui.js"
+
+  # jQuery UI components
+  #
+  file "jquery-ui.widget.js", "http://jquery-ui.googlecode.com/svn/tags/#{JQUERY_UI_VER}/ui/jquery.ui.widget.js"
+end
