@@ -1,23 +1,23 @@
-(function($) {
-    $(function() {
-        /*
-        ** Add classes to the html tag if the browser is a version of Internet
-        ** Explorer. Inspired by
-        **  <paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/>.
-        ** 
-        ** It turns out that the method outlined there doesn't work well with
-        ** the Wicket framework <wicket.apache.org/>, so I'm going with an all-
-        ** JavaScript solution. Key off the classes assigned by this function
-        ** to write your IE-specific styles in ie.css, included above.
-        */
-        $("html").addClass(fiftyfive.util.getIEClass());
-        if(navigator.userAgent.match(/Firefox/i))
-        {
-            $("html").addClass("ff");
-        }
+/*------------------------------------------------------------------------------
+| application.js
+| Katamari
+| Author(s): Richa Avasthi
+| Created: 2012-10-07
+|
+| Global JS utilities.
+------------------------------------------------------------------------------*/
 
-        // http://adactio.com/journal/4470/
-        if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i))
+// Establish namespace. Change to match the name of your application.
+var Katamari = window.Katamari ? window.Katamari : {};
+
+Katamari.util = {
+    /*
+    ** Workaround for MobileSafari zoom bug after orientation change.
+    ** From: http://adactio.com/journal/4470/
+    */
+    iosZoomWorkaround: function() {
+        var ua = navigator.userAgent;
+        if (ua.match(/iPhone/) || ua.match(/iPad/))
         {
             var viewportmeta = $('meta[name="viewport"]');
             if (viewportmeta.length > 0)
@@ -30,6 +30,26 @@
                 });
             }
         }
+    }
+};
+
+$.extend(Katamari, {
+    /*
+    ** Override this to perform any application-wide initialization JavaScript. This should
+    ** run on DOM ready for every page in the application, and resides in the main application
+    ** JS namespace.
+    */
+    commonInit: function() {
+        Katamari.util.iosZoomWorkaround();
+
+        // Other stuff to do as soon as the DOM is ready
+    }
+});
+
+
+(function($) {
+    $(function() {
+        Katamari.commonInit();
     });
 })(jQuery);
 
