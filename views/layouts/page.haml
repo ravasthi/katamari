@@ -18,23 +18,24 @@
     %link{:href=>'/stylesheets/application.css', :media => "screen", :rel => 'stylesheet', :type => "text/css"}
     %link{:href=>'/stylesheets/print.css', :media => "print", :rel => 'stylesheet', :type => "text/css"}
 
-    / Styles for progressively larger screen sizes.
-    %link{:href=>'/stylesheets/480.css', :media => "only screen and (min-width: 480px)", :rel => 'stylesheet', :type => "text/css"}
-    %link{:href=>'/stylesheets/768.css', :media => "only screen and (min-width: 768px)", :rel => 'stylesheet', :type => "text/css"}
-    %link{:href=>'/stylesheets/1024.css', :media => "only screen and (min-width: 1024px)", :rel => 'stylesheet', :type => "text/css"}
-    %link{:href=>'/stylesheets/1200.css', :media => "only screen and (min-width: 1200px)", :rel => 'stylesheet', :type => "text/css"}
-
-    / Styles for retina displays
-    %link{:href=>'/stylesheets/2x.css', :media => "only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)", :rel => 'stylesheet', :type => "text/css"}
-
     /[if IE]
       %link{:href=>'/stylesheets/ie.css', :media => "screen", :rel => 'stylesheet', :type => "text/css"}
 
     / JavaScript libraries (all except Modernizr at bottom of page)
-    %script{:type => "text/javascript", :src => "/javascripts/lib/modernizr/2.0.6/modernizr.min.js"}
-    %script{:type => "text/javascript", :src => "/javascripts/lib/fiftyfive-utils/modernizr-extras.js"}
-    
+    %script{:type => "text/javascript", :src => "/javascripts/lib/fiftyfive-utils/55_utils.js"}
+
+    :javascript
+      document.getElementsByTagName("html")[0].className += fiftyfive.util.getIEClass();
+
+      // scroll to hide iPhone URL bar; from http://remysharp.com/2010/08/05/doing-it-right-skipping-the-iphone-url-bar/
+      /iphone/i.test(navigator.userAgent) && !location.hash && setTimeout(function () {
+        if (!pageYOffset) window.scrollTo(0, 1);
+      }, 1000);
+
+
     / Favicons and touch icons
+    / For retina-display iPads
+    %link{:href => '/images/apple-touch-icon-xlarge.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144'}
     / For iPhone 4
     %link{:href => '/images/apple-touch-icon-large.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114'}
     / For iPad 1
@@ -44,13 +45,13 @@
     / For Nokia
     %link{:href => '/images/apple-touch-icon-small.png'}
     / For everything else
-    %link{:href => 'favicon.png', :type => 'image/png'}
-    %link{:href => 'favicon.ico'}
+    %link{:href => 'favicon.ico', :rel => "shortcut icon"}
 
     / iOS meta
     / %meta{:name => 'apple-mobile-web-app-capable',  :content => 'yes'}
     / %meta{:name => 'apple-mobile-web-app-status-bar-style',  :content => 'black-translucent'}
     / %link{:href => '/images/splash-iphone.png', :rel => 'apple-touch-startup-image', :type => 'image/png'}
+    / See <http://stackoverflow.com/questions/2634518/is-there-an-equivalent-apple-touch-startup-image-for-the-ipad> for details on iOS splash screen sizes.
 
     / Microsoft meta
     %meta{'http-equiv' => 'cleartype',  :content => 'on'}
@@ -61,18 +62,18 @@
       = partial :_nav_main
       %section#main
         = yield
-    
+      = partial :_footer
+
     / JavaScript libraries
-    %script{:type => "text/javascript", :src => "/javascripts/lib/jquery/1.6.4/jquery.min.js"}
-    %script{:type => "text/javascript", :src => "/javascripts/lib/jquery-ui/1.8.16/jquery-ui.min.js"}
-    %script{:type => "text/javascript", :src => "/javascripts/lib/fiftyfive-utils/55_utils.js"}
+    %script{:type => "text/javascript", :src => "/javascripts/lib/jquery.js"}
+    %script{:type => "text/javascript", :src => "/javascripts/lib/jquery-ui.widget.js"}
     %script{:type => "text/javascript", :src => "/javascripts/lib/fiftyfive-utils/jquery.55_utils.js"}
 
     /[if (lt IE 9) & (!IEMobile)]
-      %script{:type => "text/javascript", :src => "/javascripts/lib/selectivizr/selectivizr-min.js"}
-      %script{:type => "text/javascript", :src => "/javascripts/lib/respond/respond.min.js"}
+      %script{:type => "text/javascript", :src => "/javascripts/lib/shivs-custom.js"}
 
     / Application-specific JS
     %script{:type => "text/javascript", :src => "/javascripts/application.js"}
-    
+
     = partial :_analytics
+
