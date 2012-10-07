@@ -18,6 +18,7 @@ gem "rdiscount"
 # livereload
 gem 'guard-livereload'
 gem 'rack-livereload'
+gem 'terminal-notifier-guard'
 
 # vendored assets
 gem "vendorer"

@@ -1,3 +1,27 @@
 /*-----[ header ]---------------------------------------------------------------
 | Common page header styles.
 */
+header.global
+{
+  nav ul
+  {
+    margin: 0;
+
+    li
+    {
+      display: inline;
+      margin-right: $column-width;
+    }
+  }
+}
+
+header.global, footer.global
+{
+  padding: $body-text-line-height / 2 $column-width;
+
+  @media (min-width: 768px)
+  {
+    padding-right: $gutter-width;
+    padding-left: $gutter-width;
+  }
+}

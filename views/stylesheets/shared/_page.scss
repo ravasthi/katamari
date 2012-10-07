@@ -3,6 +3,19 @@
 */
 #page
 {
+  @media (min-width: 480px)
+  {
+    margin: 0 auto;
+    max-width: $content-width + 2 * $column-width;
+  }
+
+  @media (min-width: 768px)
+  {
+    margin: $section-spacing auto;
+    width: $content-width + 2 * $gutter-width;
+    max-width: none;
+  }
+
   .annotation,
   .fine-print,
   .form-help
