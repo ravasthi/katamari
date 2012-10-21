@@ -22,4 +22,3 @@ gem "terminal-notifier-guard"
 
 # vendored assets
 gem "vendorer"
-
